@@ -3,13 +3,14 @@ var Population = function() {
     this.populationSize = 0;
     this.goalBinaryString = "";
     this.totalFitness = 0;
-    this.mutationRate = 0.05;
+    this.mutationRate = 0;
     this.matingRate = 0.5;
 }
 
-Population.prototype.generateRandomPopulation = function(popSize, goalBinaryString) {
+Population.prototype.generateRandomPopulation = function(popSize, goalBinaryString, mutationRate) {
     this.populationSize = popSize;
     this.goalBinaryString = goalBinaryString;
+    this.mutationRate = mutationRate;
 
     for (var i = 0; i < this.populationSize; i++) {
         var ind = new Individual();
