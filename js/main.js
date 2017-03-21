@@ -1,9 +1,12 @@
 var population;
-var POPULATION_SIZE = 50;
 var goalBinaryString;
 var numGenerations;
 var running = false;
 var complete = false;
+
+var MUTATION_RATE = 0.05
+var POPULATION_SIZE = 50;
+var binaryStringLength = 50;
 
 var getNewBinaryString = function(len) {
     var binaryString = "";
@@ -16,9 +19,9 @@ var getNewBinaryString = function(len) {
 var getNewPopulation = function() {
     population = new Population();
     numGenerations = 0;
-    goalBinaryString = getNewBinaryString(50);
+    goalBinaryString = getNewBinaryString(binaryStringLength);
     $(".infoList #goalBinaryString").text("Goal Binary String: " + goalBinaryString);
-    population.generateRandomPopulation(POPULATION_SIZE, goalBinaryString);
+    population.generateRandomPopulation(POPULATION_SIZE, goalBinaryString, MUTATION_RATE);
 }
 
 var startGenetics = function() {
