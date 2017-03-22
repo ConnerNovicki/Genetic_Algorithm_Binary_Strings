@@ -68,7 +68,7 @@ Population.prototype.allowGeneration = function() {
         else newPop.push(c2);
     }
     this.individuals = newPop;
-    this.allowMutations();≥
+    this.allowMutations();
 }
 
 Population.prototype.findParentsToReproduce = function() {
